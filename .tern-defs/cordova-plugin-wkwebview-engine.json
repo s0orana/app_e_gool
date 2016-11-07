@@ -1,0 +1,17 @@
+{
+    "!name": "cordova-plugin-wkwebview-engine",
+    "!define": {
+        "!modules": {
+            "ios-wkwebview-exec": {
+                "nativeFetchMessages": "fn()",
+                "nativeEvalAndFetch": "fn()",
+                "nativeCallback": "fn()",
+                "!type": "fn()"
+            }
+        }
+    },
+    "!plugin-version": "1.0.3",
+    "cordova": {
+        "exec": "!modules.ios-wkwebview-exec"
+    }
+}
