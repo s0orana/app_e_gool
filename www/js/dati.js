@@ -20,9 +20,43 @@ window.dati =  {
              "fields": [
                 {"name":"ID_TIME", "type":"INTEGER", "size":4, "default":null, "key":true},
                 {"name":"ID_USUARIO", "type":"INTEGER", "size":4, "default":"null", "key":false},
-                {"name":"NOME_TIME", "type":"VARCHAR", "size":30, "default":"", "key":false},
+                {"name":"NOME_TIME", "type":"VARCHAR", "size":10, "default":"", "key":false},
                 {"name":"SIGLA_TIME", "type":"VARCHAR", "size":5, "default":"", "key":false},
                 {"name":"LEVEL_TIME", "type":"INTEGER", "size":3, "default":0, "key":false}
+            ]
+        },
+        {   
+            "table":"jogador",
+             "fields": [
+                {"name":"ID_JOGADOR", "type":"INTEGER", "size":4, "default":null, "key":true},
+                {"name":"ID_TIME", "type":"INTEGER", "size":4, "default":null, "key":false},
+                {"name":"NOME_JOGADOR", "type":"VARCHAR", "size":30, "default":"", "key":false},
+                {"name":"APELIDO_JOGADOR", "type":"VARCHAR", "size":30, "default":"", "key":false},
+                {"name":"IDADE_JOGADOR", "type":"INTEGER", "size":2, "default":"18", "key":false},
+                {"name":"LEVEL_JOGADOR", "type":"INTEGER", "size":3, "default":0, "key":false},
+                {"name":"POSICAO_JOGADOR", "type":"VARCHAR", "size":3, "default":"", "key":false} 
+            ]
+        },
+        {   
+            "table":"campeonato",
+             "fields": [
+                {"name":"ID_CAMPEONATO", "type":"INTEGER", "size":4, "default":null, "key":true},
+                {"name":"ID_TIME", "type":"INTEGER", "size":4, "default":null, "key":false},
+                {"name":"PONTUACAO", "type":"INTEGER", "size":4, "default":0, "key":false},
+                {"name":"SALDO_GOL", "type":"INTEGER", "size":4, "default":0, "key":false},
+                {"name":"NUMERO_JOGOS", "type":"INTEGER", "size":4, "default":0, "key":false},
+                {"name":"NUMERO_VITORIAS", "type":"INTEGER", "size":4, "default":0, "key":false}
+            ]
+        },
+        {   
+            "table":"jogos",
+             "fields": [
+                {"name":"ID_JOGO", "type":"INTEGER", "size":4, "default":null, "key":true},
+                {"name":"ID_CAMPEONATO", "type":"INTEGER", "size":4, "default":null, "key":false},
+                {"name":"ID_TIME_CASA", "type":"INTEGER", "size":4, "default":null, "key":false},
+                {"name":"ID_TIME_VISITANTE", "type":"INTEGER", "size":4, "default":null, "key":false},
+                {"name":"PLACAR_TIME_CASA", "type":"INTEGER", "size":4, "default":0, "key":false},
+                {"name":"PLACAR_TIME_VISITANTE", "type":"INTEGER", "size":4, "default":0, "key":false}
             ]
         }
     ],

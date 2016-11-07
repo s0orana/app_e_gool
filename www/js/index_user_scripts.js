@@ -133,42 +133,18 @@
         /* listitem  #lstCadastrarTime */
     $(document).on("click", "#lstCadastrarTime", function(evt)
     {
-        var sql = "select * from time where ID_USUARIO="+user_key;
-        dati.query(sql,function(busca){
-            if(busca.rows.length>0){
-                var cliente = busca.rows.item(0);
-                time_key = cliente.ID_TIME;
-                activate_page("#admin_time");
-                var time = atualiza_time();
-                $("#admin_time_nometime").val() == time.NOME_TIME;
-                $("#admin_time_leveltime").val() == time.LEVEL_TIME;
-            }else{
-                activate_page("#cadastra_time");
-                $("#header_home").text("");
-                $("#header_home").prepend('<h2>CADASTRAR TIME<h2>');
-            }
-        });
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-         activate_subpage("#cadastra_time"); 
+        if(time_key==null){
+            activate_subpage("#cadastra_time");
+        }else{
+            var cliente = atualiza_time();
+            cliente = busca.rows.item(0);
+            time_key = cliente.ID_TIME;
+            activate_subpage("#admin_time");
+            $("#header_home").text("");
+            $("#header_home").prepend('<h2>'+cadastrotime.NOME_TIME+'<h2>');
+            $("#admin_time_nometime").val() == cliente.NOME_TIME;
+            $("#admin_time_leveltime").val() == cliente.LEVEL_TIME;           
+        }
          uib_sb.toggle_sidebar($("#overlapLateral"));
          return false;
     });
@@ -289,6 +265,7 @@
     {
          /*global activate_subpage */
          activate_subpage("#page_90_84"); 
+         uib_sb.toggle_sidebar($("#overlapLateral"));
          $("#header_home").text("");
          $("#header_home").prepend('<h2>PAGINA PRINCIPAL<h2>');
          return false;
@@ -301,7 +278,7 @@
         var cadastrotime = {
             "NOME_TIME": $("#cadastra_time_time").val(),
             "SIGLA_TIME": $("#cadastra_time_sigla").val(),
-            "ID_USUARIO": $(user_key),
+            "ID_USUARIO": parseInt(user_key),
         };
         
         dati.insert("time", cadastrotime, function(id_time){
@@ -322,8 +299,7 @@
             });
         });
         $("#header_home").text("");
-        // NAO CONSEGUI COLOCAR O NOME DO TIME NO HEADER
-        $("#header_home").prepend('<h2>SEU TIME<h2>');
+        $("#header_home").prepend('<h2>'+cadastrotime.NOME_TIME+'<h2>');
         return false;
     });
     
