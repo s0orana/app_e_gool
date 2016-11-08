@@ -293,21 +293,7 @@
             $("#cadastra_time_time").val("");
             $("#cadastra_time_sigla").val("");
             activate_subpage("#admin_time"); 
-            var jogadores = ["Aaren","Aarika","Abagael","Abagail","Abbe","Abbey","Abbi","Abbie","Abby","Abbye","Abigael","Abigail","Abigale","Abra","Ada","Adah","Adaline","Adan","Adara","Adda"
-                            Kate
-                             Katee
-                             Katerina
-                             Katerine
-                             Katey
-                             Kath
-                             Katha
-                             Katharina
-                             Katharine
-                             Katharyn
-                             Kathe
-                            
-                            
-                            ];
+            var jogadores = ["Aaren","Aarika","Abagael","Abagail","Abbe","Abbey","Abbi","Abbie","Abby","Abbye","Abigael","Abigail","Abigale","Abra","Ada","Adah","Adaline","Adan","Adara","Adda","Kate","Katee","Katerino",    "Katerine","Katey","Kath","Katha","Katharina","Katharine","Katharyn","Kathe"];
             var posicao = ["Goleiro","Zagueiro","Meio Campo","Atacante"];
             var valor = 0;
             while(valor < jogadores.length){
