@@ -7956,3 +7956,77 @@ label:empty {
     flex-basis: calc(100% / 2);
   }
 }
+@media all and (min-width: 0px) {
+  .row-height-5 > .col > .content-area {
+    min-height: 100px;
+  }
+}
+.sbs-container {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -o-flex;
+  display: flex;
+  flex-direction: row;
+}
+.leftContent,
+.rightContent {
+  display: inline;
+  width: 50%;
+}
+@media all {
+  .wrapping-col > .admin_liga_margin,
+  .wrapping-col > .afScrollPanel > .admin_liga_margin {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+  .wrapping-col > .admin_liga_margin,
+  .wrapping-col > .afScrollPanel > .admin_liga_margin {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+  .vertical-col > .admin_liga_margin,
+  .vertical-col > .afScrollPanel > .admin_liga_margin {
+    margin-left: 33px;
+  }
+  .vertical-col > .admin_liga_margin,
+  .vertical-col > .afScrollPanel > .admin_liga_margin {
+    margin-left: 33px;
+  }
+  .admin_liga_margin {
+    margin-top: 20px;
+  }
+}
+@media all {
+  .ligas_background > .content-area {
+    background-color: ;
+    background-image: url("../images/legue.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  }
+}
+@media all and (min-width: 0px) {
+  .row-height-6 > .col > .content-area {
+    min-height: 100px;
+  }
+}
+@media all {
+  .ligas_background2 {
+    background-color: ;
+    background-image: url("../images/legue.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+}
+@media all {
+  .Campo_background {
+    background-color: ;
+    background-image: url("../images/fundo_oficial.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% auto;
+  }
+}

@@ -293,8 +293,22 @@
             $("#cadastra_time_time").val("");
             $("#cadastra_time_sigla").val("");
             activate_subpage("#admin_time"); 
-            var jogadores = ["Aaren","Aarika","Abagael","Abagail","Abbe","Abbey","Abbi","Abbie","Abby","Abbye","Abigael","Abigail","Abigale","Abra","Ada","Adah","Adaline","Adan","Adara","Adda"];
-            var posicao = ["Goleiro","Central","Lateral D","Lateral E","Medio Defensivo","Medio Ala","CentroAvante","Atacante","Goleiro"];
+            var jogadores = ["Aaren","Aarika","Abagael","Abagail","Abbe","Abbey","Abbi","Abbie","Abby","Abbye","Abigael","Abigail","Abigale","Abra","Ada","Adah","Adaline","Adan","Adara","Adda"
+                            Kate
+                             Katee
+                             Katerina
+                             Katerine
+                             Katey
+                             Kath
+                             Katha
+                             Katharina
+                             Katharine
+                             Katharyn
+                             Kathe
+                            
+                            
+                            ];
+            var posicao = ["Goleiro","Zagueiro","Meio Campo","Atacante"];
             var valor = 0;
             while(valor < jogadores.length){
                 var rand_posicao = posicao[Math.floor(Math.random() * posicao.length)];
@@ -326,8 +340,20 @@
         /* button  #admin_time_jogadores */
     $(document).on("click", "#admin_time_jogadores", function(evt)
     {
-         /*global activate_page */
-         activate_page("#time_jogadores"); 
+        //NAO FUNCIONA, A IDEIA É APARECER TODOS OS JOGADORES NA TELA
+        activate_page("#time_jogadores");
+        var sql = "select * from jogadores where id_time='"+time_key+"'";
+        dati.query(sql,function(busca){
+            var valor = 1;
+             while(valor != busca.rows.length){
+                var cliente = busca.rows.item(valor);
+                navigator.notification.alert("Time #"+cliente.NOME_JOGADOR+" cadastrado com sucesso!","INFO",null,"OK");
+                $(document).getElementById(toString(valor)).val('Jogador: ' + cliente.NOME_JOGADOR + '\n Apelido: ' + cliente.APELIDO_JOGADOR + '\n Idade: ' + cliente.IDADE_JOGADOR + '   Level: ' + cliente.LEVEL_JOGADOR + '\n Posicao: ' + cliente.POSICAO_JOGADOR);
+                $("#time_jogadores_1").val('Jogador: ' + cliente.NOME_JOGADOR + '\n Apelido: ' + cliente.APELIDO_JOGADOR + '\n Idade: ' + cliente.IDADE_JOGADOR + '   Level: ' + cliente.LEVEL_JOGADOR + '\n Posicao: ' + cliente.POSICAO_JOGADOR);
+                   valor++;
+              }
+        });
+          
          return false;
     });
     
@@ -336,6 +362,38 @@
     {
          /*global activate_subpage */
          activate_subpage("#admin_time"); 
+         return false;
+    });
+    
+        /* listitem  #lstLigas */
+    $(document).on("click", "#lstLigas", function(evt)
+    {
+        /*global activate_subpage */
+        activate_subpage("#admin_ligas"); 
+        uib_sb.toggle_sidebar($("#overlapLateral"));
+        $("#header_home").text("");
+        $("#header_home").prepend('<h2>LIGAS<h2>');
+         return false;
+    });
+    
+        /* button  #admin_ligas_rapida */
+    $(document).on("click", "#admin_ligas_rapida", function(evt)
+    {
+        var registro = {
+            "NOME": $("#cadastro_nome").val(),
+            "EMAIL": $("#cadastro_email").val(),
+            "SENHA": $("#cadastro_senha").val(),
+        };
+        
+        dati.insert("tecnico", registro, function(codigo){
+            //Msg de sucesso
+            navigator.notification.alert("Tecnico #"+codigo+" cadastrado com sucesso!","INFO",null,"OK");
+            //zerar variaveis
+            $("#cadastro_nome").val("");
+            $("#cadastro_email").val("");
+            $("#cadastro_senha").val("");
+            activate_subpage("#login"); 
+        });
          return false;
     });
     
