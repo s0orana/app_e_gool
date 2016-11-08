@@ -363,23 +363,65 @@
     });
     
         /* button  #admin_ligas_rapida */
+    
+    
+        /* button  #chat_voltar */
+    $(document).on("click", "#chat_voltar", function(evt)
+    {
+         /*global activate_subpage */
+         activate_subpage("#page_90_84"); 
+         return false;
+    });
+    
+        /* button  #chat_apagar */
+    $(document).on("click", "#chat_apagar", function(evt)
+    {
+        $("#chat_palavra").val(""); 
+        return false;
+    });
+    
+        /* button  #chat_enviar */
+    $(document).on("click", "#chat_enviar", function(evt)
+    {   
+        var palavra = "select * from tecnico where codigo='" + user_key +"'";
+        dati.query(palavra,function(search){
+        var busca = search.rows.item(0);
+        var chat_palavra = $("#chat_palavra").val();
+        $("#chat_texto").append(busca.NOME +': ' + chat_palavra + '<br>')
+        $("#chat_palavra").val("");
+        });
+        return false;
+    });
+    
+        /* listitem  #lstChat */
+    $(document).on("click", "#lstChat", function(evt)
+    {
+        activate_page("#chat_home"); 
+        $("#chat_home_header").text("");
+        $("#chat_home_header").prepend('<h2>CHAT GLOBAL<h2>');
+        return false;
+    });
+    
+        /* button  #amigos_home_buscar */
+    $(document).on("click", "#amigos_home_buscar", function(evt)
+    {
+        navigator.notification.alert("Tecnico "+$("#amigos_home_amigo").val()+" não encontrado.","INFO",null,"OK");
+         return false;
+    });
+    
+        /* listitem  #lstAmigos */
+    $(document).on("click", "#lstAmigos", function(evt)
+    {
+         /*global activate_subpage */
+         activate_subpage("#amigos_home"); 
+         uib_sb.toggle_sidebar($("#overlapLateral"));
+         return false;
+    });
+    
+        /* button  #admin_ligas_rapida */
     $(document).on("click", "#admin_ligas_rapida", function(evt)
     {
-        var registro = {
-            "NOME": $("#cadastro_nome").val(),
-            "EMAIL": $("#cadastro_email").val(),
-            "SENHA": $("#cadastro_senha").val(),
-        };
-        
-        dati.insert("tecnico", registro, function(codigo){
-            //Msg de sucesso
-            navigator.notification.alert("Tecnico #"+codigo+" cadastrado com sucesso!","INFO",null,"OK");
-            //zerar variaveis
-            $("#cadastro_nome").val("");
-            $("#cadastro_email").val("");
-            $("#cadastro_senha").val("");
-            activate_subpage("#login"); 
-        });
+        /* your code goes here */ 
          return false;
     });
     
