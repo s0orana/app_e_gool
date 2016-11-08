@@ -11,13 +11,9 @@
     var user_key;
     //Variavel Global que guarda a chave do time em uso
     var time_key;
-     //Atualizar time sempre que a pagina time_home for carregada
-    function atualiza_time(){
-        var palavra_sql = "select * from time where id_time='"+time_key+"'";
-        dati.query(palavra_sql,function(busca){
-             var cliente = busca.rows.item(0);
-             return cliente;
-        });
+    //Entrega valor random
+    function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
     }
      
      /* button  #btnLogin */
@@ -133,17 +129,25 @@
         /* listitem  #lstCadastrarTime */
     $(document).on("click", "#lstCadastrarTime", function(evt)
     {
+        var palavra_busca = "select * from time where id_usuario='"+user_key+"'";
+        dati.query(palavra_busca,function(search){
+           var busca = search.rows.item(0);
+            time_key = busca.ID_TIME;
+        });
+        
         if(time_key==null){
             activate_subpage("#cadastra_time");
         }else{
-            var cliente = atualiza_time();
-            cliente = busca.rows.item(0);
-            time_key = cliente.ID_TIME;
-            activate_subpage("#admin_time");
-            $("#header_home").text("");
-            $("#header_home").prepend('<h2>'+cadastrotime.NOME_TIME+'<h2>');
-            $("#admin_time_nometime").val() == cliente.NOME_TIME;
-            $("#admin_time_leveltime").val() == cliente.LEVEL_TIME;           
+            var palavra_sql = "select * from time where id_time='"+time_key+"'";
+            dati.query(palavra_sql,function(busca){
+                var cliente = busca.rows.item(0);
+                time_key = cliente.ID_TIME;
+                activate_subpage("#admin_time");
+                $("#header_home").text("");
+                $("#header_home").prepend('<h2>'+cadastrotime.NOME_TIME+'<h2>');
+                $("#admin_time_nometime").val() == cliente.NOME_TIME;
+                $("#admin_time_leveltime").val() == cliente.LEVEL_TIME;
+            });          
         }
          uib_sb.toggle_sidebar($("#overlapLateral"));
          return false;
@@ -289,6 +293,22 @@
             $("#cadastra_time_time").val("");
             $("#cadastra_time_sigla").val("");
             activate_subpage("#admin_time"); 
+            var jogadores = ["Aaren","Aarika","Abagael","Abagail","Abbe","Abbey","Abbi","Abbie","Abby","Abbye","Abigael","Abigail","Abigale","Abra","Ada","Adah","Adaline","Adan","Adara","Adda"];
+            var posicao = ["Goleiro","Central","Lateral D","Lateral E","Medio Defensivo","Medio Ala","CentroAvante","Atacante","Goleiro"];
+            var valor = 0;
+            while(valor < jogadores.length){
+                var rand_posicao = posicao[Math.floor(Math.random() * posicao.length)];
+                var registro = {
+                    "ID_TIME": id_time,
+                    "NOME_JOGADOR": jogadores[valor],
+                    "APELIDO_JOGADOR": jogadores[valor],
+                    "IDADE_JOGADOR": getRandomInt(18,40),
+                    "LEVEL_JOGADOR": getRandomInt(0,40),
+                    "POSICAO_JOGADOR": rand_posicao,
+                };
+            dati.insert("jogador", registro, function(codigo){});
+            valor = valor + 1;
+            }
             var sql = "select * from time where id_time='"+time_key+"'";
             dati.query(sql,function(busca){
                 var cliente = busca.rows.item(0);
@@ -301,6 +321,22 @@
         $("#header_home").text("");
         $("#header_home").prepend('<h2>'+cadastrotime.NOME_TIME+'<h2>');
         return false;
+    });
+    
+        /* button  #admin_time_jogadores */
+    $(document).on("click", "#admin_time_jogadores", function(evt)
+    {
+         /*global activate_page */
+         activate_page("#time_jogadores"); 
+         return false;
+    });
+    
+        /* button  #time_jogadores_voltar */
+    $(document).on("click", "#time_jogadores_voltar", function(evt)
+    {
+         /*global activate_subpage */
+         activate_subpage("#admin_time"); 
+         return false;
     });
     
     }
