@@ -36,17 +36,11 @@
   </head>
 
   <body>
-    <div class="upage" id="mainpage">
+    <div class="upage ligas_background2" id="mainpage">
       <div class="upage-outer">
         <div class="upage-content ac0 content-area vertical-col left" id="page_70_0">
-          <div class="tarea widget uib_w_32 text-receptacte-sizing text-texto" data-uib="media/text" data-ver="0" name="uib_w_32">
-            <div class="widget-container left-receptacle"></div>
-            <div class="widget-container right-receptacle"></div>
-            <div class="text-container">
-              <h2><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Bem-vindo ao</strong></h2>
-            </div>
-          </div>
-          <div class="widget uib_w_31 scale-image margins-imagem" data-uib="media/img" data-ver="0">
+
+          <div class="widget uib_w_31 scale-image d-margins" data-uib="media/img" data-ver="0">
             <figure class="figure-align">
               <img src="images/ehgoool.PNG">
 
@@ -61,7 +55,6 @@
       </div>
     </div>
     <div class="upage vertical-col left hidden ligas_background2" id="login">
-
       <div class="table-thing widget uib_w_4 margins-email" data-uib="twitter%20bootstrap/input" data-ver="1">
         <label class="narrow-control label-inline" for="email_login_campo">E-mail</label>
         <input class="wide-control form-control default" type="email" placeholder="Digite o seu e-mail" name="email_login_campo" id="email_login_campo">
@@ -76,12 +69,10 @@
         <button class="btn widget uib_w_8 btn-warning" data-uib="twitter%20bootstrap/button" data-ver="1" id="btnEsqueciSenha"><i class="fa fa-unlock button-icon-top" data-position="top"></i>Esqueci a senha</button>
         <button class="btn widget uib_w_9 btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="btnVoltarMain"><i class="fa fa-mail-reply button-icon-top" data-position="top"></i>Voltar</button>
       </div>
-
     </div>
-    <div class="upage hidden" id="cadastro">
-      <div class="upage-outer">
-
-        <div class="upage-content ac0 content-area vertical-col left" id="page_18_3">
+    <div class="upage hidden ligas_background2" id="cadastro">
+      <div class="upage-content ac0 content-area vertical-col left" id="page_18_3">
+        <form class="upage-content ac0 content-area vertical-col" name="cadastro_tecnico" id="cadastro_tecnico">
           <div class="widget uib_w_39 scale-image margins-imgem-cadastro" data-uib="media/img" data-ver="0">
             <figure class="figure-align">
               <img src="images/ehgoool.PNG">
@@ -89,7 +80,7 @@
               <figcaption data-position="bottom"></figcaption>
             </figure>
           </div>
-          <div class="table-thing widget uib_w_10 margins-nome" data-uib="twitter%20bootstrap/input" data-ver="1">
+          <div class="table-thing widget uib_w_1 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
             <label class="narrow-control label-inline" for="cadastro_nome">Nome</label>
             <input class="wide-control form-control default" type="text" placeholder="Digite o seu nome" name="cadastro_nome" id="cadastro_nome">
           </div>
@@ -102,11 +93,10 @@
             <input class="wide-control form-control default" type="password" placeholder="Digite sua senha" name="cadastro_senha" id="cadastro_senha">
           </div>
           <div class="btn-group uib-bs-flex widget uib_w_13 d-margins" data-uib="twitter%20bootstrap/button_group" data-ver="1">
-            <button class="btn widget uib_w_14 btn-success" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn_salvar_cadastro"><i class="fa fa-save button-icon-top" data-position="top"></i>Salvar</button>
+            <button class="btn widget uib_w_14 btn-success" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn_salvar_cadastro" type="submit"><i class="fa fa-save button-icon-top" data-position="top"></i>Salvar</button>
             <button class="btn widget uib_w_15 btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="btnVoltarLogin"><i class="fa fa-mail-reply button-icon-top" data-position="top"></i>Voltar</button>
           </div>
-        </div>
-
+        </form>
       </div>
 
     </div>
@@ -195,6 +185,7 @@
             </div>
 
             <button class="btn widget uib_w_26 margins-voltar-overlap btn-sm btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="btnFechar"><i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left"></i>Fechar</button>
+            <button class="btn widget uib_w_184 btn-sm btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="lst_logoff"><i class="fa fa-user-times button-icon-left" data-position="left"></i>Logoff</button>
           </div>
         </div>
         <div id="cadastra_time" class="upage-content vertical-col left hidden">
@@ -259,7 +250,9 @@
                 <div class="widget-container left-receptacle"></div>
                 <div class="widget-container right-receptacle"></div>
                 <div class="text-container">
-                  <p>[TIME]</p>
+                  <p>
+                    [TIME]
+                  </p>
                 </div>
               </div>
               <button class="btn widget uib_w_93 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="admin_time_jogadores">Jogadores</button>
@@ -272,16 +265,16 @@
                   <p>Level : [XX]</p>
                 </div>
               </div>
-              <button class="btn widget uib_w_94 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="admin_time_treinamento">Treinamento</button>
+              <button class="btn widget uib_w_94 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="admin_time_ir_treinamento">Treinamento</button>
             </div>
 
           </div>
           <div class="card_grid widget uib_w_98 wrapping-col d-margins flex-basis-98" data-uib="layout/card_grid" data-ver="0">
             <div class="widget widget-container content-area vertical-col uib-card cpad-0 uib_w_99 d-margins" data-uib="layout/card" data-ver="0">
-              <button class="btn widget uib_w_101 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="admin_time_financeiro">Financeiro</button>
+              <button class="btn widget uib_w_101 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="admin_time_ir_financeiro">Financeiro</button>
             </div>
             <div class="widget widget-container content-area vertical-col uib-card cpad-0 uib_w_100 d-margins" data-uib="layout/card" data-ver="0">
-              <button class="btn widget uib_w_102 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="admin_time_formacao">Formação</button>
+              <button class="btn widget uib_w_102 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="admin_time_ir_formacao">Formação</button>
             </div>
           </div>
 
@@ -290,7 +283,7 @@
               <div class="widget-container content-area vertical-col">
                 <div class="table-thing widget uib_w_97 d-margins admin_time_avisos" data-uib="twitter%20bootstrap/text_area" data-ver="1">
                   <label class="narrow-control label-top-left">Avisos</label>
-                  <textarea rows="4" class="wide-control form-control" wrap="hard" placeholder="Avisos" id="admin_time_avisos"></textarea>
+                  <textarea rows="4" class="wide-control form-control" wrap="hard" id="admin_time_avisos" placeholder="Bem vindo ao menu time, aqui você podera administra-lo como quiser."></textarea>
                 </div>
                 <span class="uib_shim"></span>
               </div>
@@ -326,7 +319,7 @@
               <button class="btn widget uib_w_113 btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="admin_ligas_cadastrar">Cadastra Liga</button>
             </div>
             <div class="rightContent widget-container">
-              <button class="btn widget uib_w_114 btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="admin_ligas_procurar">Procurar Liga</button>
+              <button class="btn widget uib_w_114 btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="admin_ligas_ir_procurar">Procurar Liga</button>
 
             </div>
           </div>
@@ -363,41 +356,242 @@
             </div>
           </div>
         </div>
+        <div id="admin_time_treinamento" class="upage-content vertical-col left hidden">
+          <div class="grid grid-pad urow uib_row_13 row-height-13" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_21 col-0_6-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <button class="btn widget uib_w_155 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="foco_atacante">ATACANTE</button>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <div class="col uib_col_19 col-0_6-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <button class="btn widget uib_w_156 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="foco_goleiro">GOLEIROS</button>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <span class="uib_shim"></span>
+          </div>
+
+          <div class="grid grid-pad urow uib_row_14 row-height-14" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_22 col-0_6-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <button class="btn widget uib_w_157 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="foco_meio_campo">MEIO CAMPO</button>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <div class="col uib_col_20 col-0_6-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <button class="btn widget uib_w_158 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="foco_zagueiro">ZAGUEIROS</button>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <span class="uib_shim"></span>
+          </div>
+
+          <div class="grid grid-pad urow uib_row_15 row-height-15" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_23 col-0_12-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <button class="btn widget uib_w_161 btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="foco_equilibrado">EQUILIBRADO</button>
+                <div class="table-thing widget uib_w_160 d-margins" data-uib="twitter%20bootstrap/text_area" data-ver="1">
+                  <label class="narrow-control"></label>
+                  <textarea rows="2" class="wide-control form-control" wrap="soft" id="admin_time_treino_status">FOCO EM TREINO ATUAL -EQUILIBRADO-
+                  </textarea>
+                </div>
+                <button class="btn widget uib_w_159 btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="admin_time_treinamento_voltar">VOLTAR</button>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <span class="uib_shim"></span>
+          </div>
+        </div>
+        <div id="admin_time_financeiro" class="upage-content vertical-col left hidden">
+          <div class="grid grid-pad urow uib_row_16 row-height-16" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_24 col-0" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <div class="table-thing widget uib_w_162" data-uib="twitter%20bootstrap/text_area" data-ver="1">
+                  <label class="narrow-control label-top-left">EXTRATO</label>
+                  <textarea rows="10" class="wide-control form-control" wrap="soft" id="time_financeiro_extrato">C - 10.000,00 - Saldo Inicial</textarea>
+                </div>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+
+            <span class="uib_shim"></span>
+          </div>
+
+          <div class="grid grid-pad urow uib_row_17 row-height-17" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_26 col-0_12-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <div class="table-thing widget uib_w_166" data-uib="twitter%20bootstrap/text_area" data-ver="1">
+                  <label class="narrow-control label-top-left">À DEBITAR</label>
+                  <textarea rows="4" class="wide-control form-control" wrap="soft" id="time_financeiro_debitar">D - 1.000,00 - Treinamento Jogadores</textarea>
+                </div>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <span class="uib_shim"></span>
+          </div>
+
+          <div class="grid grid-pad urow uib_row_18 row-height-18" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_27 col-0_6-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <button class="btn widget uib_w_165 custom_3 btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="time_financeiro_voltar">Voltar</button>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <div class="col uib_col_28 col-0_6-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <div class="table-thing widget uib_w_164" data-uib="twitter%20bootstrap/text_area" data-ver="1">
+                  <label class="narrow-control label-top-right">SALDO</label>
+                  <textarea rows="1" class="wide-control form-control" wrap="soft" id="time_financeiro_saldo">$10.000,00</textarea>
+                </div>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+
+            <span class="uib_shim"></span>
+          </div>
+        </div>
+        <div id="admin_time_formacao" class="upage-content vertical-col left hidden">
+          <div class="uib-grid widget uib_w_167 grid-text grid-height d-margins" data-uib="layout/grid" data-ver="1">
+            <div class="uib-grid-row">
+              <div class="uib-grid-cell widget-container">
+                <button class="btn widget uib_w_168 d-margins btn-info" data-uib="twitter%20bootstrap/button" data-ver="1" id="442">4-4-2</button>
+              </div>
+              <div class="uib-grid-cell widget-container">
+                <button class="btn widget uib_w_169 d-margins btn-warning" data-uib="twitter%20bootstrap/button" data-ver="1" id="433">4-3-3</button>
+              </div>
+              <div class="uib-grid-cell widget-container">
+                <button class="btn widget uib_w_170 d-margins btn-info" data-uib="twitter%20bootstrap/button" data-ver="1" id="541">5-4-1</button>
+              </div>
+            </div>
+            <div class="uib-grid-row">
+              <div class="uib-grid-cell widget-container">
+                <button class="btn widget uib_w_171 d-margins btn-warning" data-uib="twitter%20bootstrap/button" data-ver="1" id="343">3-4-3</button>
+              </div>
+              <div class="uib-grid-cell widget-container">
+                <button class="btn widget uib_w_172 d-margins btn-info" data-uib="twitter%20bootstrap/button" data-ver="1" id="451">4-5-1</button>
+              </div>
+              <div class="uib-grid-cell widget-container">
+                <button class="btn widget uib_w_173 d-margins btn-warning" data-uib="twitter%20bootstrap/button" data-ver="1" id="253">2-5-3</button>
+              </div>
+            </div>
+            <div class="uib-grid-row">
+              <div class="uib-grid-cell widget-container"></div>
+              <div class="uib-grid-cell widget-container"></div>
+              <div class="uib-grid-cell widget-container"></div>
+            </div>
+          </div>
+          <div class="table-thing widget uib_w_174" data-uib="twitter%20bootstrap/text_area" data-ver="1">
+            <label class="narrow-control label-top-left">Formação Atual</label>
+            <textarea rows="1" class="wide-control form-control" wrap="soft" id="time_formacao_atual">4-4-2</textarea>
+          </div>
+          <button class="btn widget uib_w_175 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="time_formacao_voltar">VOLTAR</button>
+        </div>
+        <div id="admin_ligas_procurar" class="upage-content vertical-col left hidden">
+          <div class="grid grid-pad urow uib_row_19 row-height-19" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_29 col-0_12-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <div class="table-thing widget uib_w_176 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
+                  <label class="narrow-control label-top-left" for="ligas_procurar_input">Digite o nome da liga que deseja procurar</label>
+                  <input class="wide-control form-control default input-lg" type="text" id="ligas_procurar_input">
+                </div>
+                <div class="grid grid-pad urow uib_row_21 row-height-21" data-uib="layout/row" data-ver="0">
+                  <div class="col uib_col_31 col-1_6-12" data-uib="layout/col" data-ver="0">
+                    <div class="widget-container content-area vertical-col">
+                      <button class="btn widget uib_w_177 btn-sm btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="admin_ligas_voltar">VOLTAR</button>
+                      <span class="uib_shim"></span>
+                    </div>
+                  </div>
+                  <div class="col uib_col_32 col-1_6-12" data-uib="layout/col" data-ver="0">
+                    <div class="widget-container content-area vertical-col">
+                      <button class="btn widget uib_w_178 btn-sm btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="admin_ligas_pesquisar">PESQUISAR<i class="glyphicon glyphicon-search button-icon-right" data-position="right"></i>
+                      </button>
+                      <span class="uib_shim"></span>
+                    </div>
+                  </div>
+
+                  <span class="uib_shim"></span>
+                </div>
+
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <span class="uib_shim"></span>
+          </div>
+
+          <div class="grid grid-pad urow uib_row_20 row-height-20" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_30 col-0_12-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <span class="uib_shim"></span>
+          </div>
+        </div>
+        <div id="admin_adiciona_amigos" class="upage-content vertical-col left hidden">
+          <div class="grid grid-pad urow uib_row_24 row-height-24" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_41 col-0_6-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <button class="btn widget uib_w_188 btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="add_amigo_listar">LISTAR AMIGOS</button>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <div class="col uib_col_40 col-0_6-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <button class="btn widget uib_w_186 btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="add_amigo_adicionar">ADICIONAR</button>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <span class="uib_shim"></span>
+          </div>
+          <div class="table-thing widget uib_w_187" data-uib="twitter%20bootstrap/text_area" data-ver="1">
+            <label class="narrow-control"></label>
+            <textarea rows="13" class="wide-control form-control" wrap="soft" id="add_amigos_lista"></textarea>
+          </div>
+          <div class="table-thing widget uib_w_185 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
+            <label class="narrow-control label-top-left" for="add_amigo_nome">Digite o nome do amigo:</label>
+            <input class="wide-control form-control default" type="text" id="add_amigo_nome">
+          </div>
+        </div>
       </div>
     </div>
     <div class="upage hidden" id="admin_conta_senha">
-      <div class="upage-outer">
-        <div class="uib-header header-bg container-group inner-element uib_w_61" data-uib="layout/header" data-ver="0">
-          <h2>Alterar Senha</h2>
-          <div class="widget-container wrapping-col single-centered"></div>
-          <div class="widget-container content-area horiz-area wrapping-col left"></div>
-          <div class="widget-container content-area horiz-area wrapping-col right"></div>
-        </div>
-        <div class="upage-content ac0 content-area vertical-col left" id="page_36_83">
+      <form class="content-area vertical-col" name="altera_senha" id="altera_senha">
+        <div class="upage-outer">
+          <div class="uib-header header-bg container-group inner-element uib_w_61" data-uib="layout/header" data-ver="0">
+            <h2>Alterar Senha</h2>
+            <div class="widget-container wrapping-col single-centered"></div>
+            <div class="widget-container content-area horiz-area wrapping-col left"></div>
+            <div class="widget-container content-area horiz-area wrapping-col right"></div>
+          </div>
+          <div class="upage-content ac0 content-area vertical-col left" id="page_36_83">
 
-          <div class="table-thing widget uib_w_62 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
-            <label class="narrow-control label-top-left" for="admin_conta_senha_s">Senha:</label>
-            <input class="wide-control form-control default" type="password" id="admin_conta_senha_s" placeholder="Digite a senha">
-          </div>
-          <div class="table-thing widget uib_w_71 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
-            <label class="narrow-control label-top-left" for="admin_conta_senha_ns">Nova Senha:</label>
-            <input class="wide-control form-control default" type="password" placeholder="Digite sua nova senha" id="admin_conta_senha_ns">
-          </div>
-          <div class="table-thing widget uib_w_63 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
-            <label class="narrow-control label-top-left" for="admin_conta_senha_c">Confirme :</label>
-            <input class="wide-control form-control default" type="password" id="admin_conta_senha_c" placeholder="Confirme sua nova senha">
-          </div>
-
-          <div class="card_grid widget uib_w_64 wrapping-col d-margins flex-basis-64" data-uib="layout/card_grid" data-ver="0">
-            <div class="widget widget-container content-area vertical-col uib-card uib_w_65 section-dimension-65 cpad-0" data-uib="layout/card" data-ver="0">
-              <button class="btn widget uib_w_69 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn_alterar_senha">Alterar</button>
+            <div class="table-thing widget uib_w_62 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
+              <label class="narrow-control label-top-left" for="admin_conta_senha_s">Senha:</label>
+              <input class="wide-control form-control default" type="password" id="admin_conta_senha_s" placeholder="Digite a senha">
             </div>
-            <div class="widget widget-container content-area vertical-col uib-card cpad-0 uib_w_66 section-dimension-66" data-uib="layout/card" data-ver="0">
-              <button class="btn widget uib_w_70 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn_alterar_voltar">Voltar</button>
+            <div class="table-thing widget uib_w_71 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
+              <label class="narrow-control label-top-left" for="admin_conta_senha_ns">Nova Senha:</label>
+              <input class="wide-control form-control default" type="password" placeholder="Digite sua nova senha" id="admin_conta_senha_ns">
+            </div>
+            <div class="table-thing widget uib_w_63 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
+              <label class="narrow-control label-top-left" for="admin_conta_senha_c">Confirme :</label>
+              <input class="wide-control form-control default" type="password" id="admin_conta_senha_c" placeholder="Confirme sua nova senha">
+            </div>
+
+            <div class="card_grid widget uib_w_64 wrapping-col d-margins flex-basis-64" data-uib="layout/card_grid" data-ver="0">
+              <div class="widget widget-container content-area vertical-col uib-card uib_w_65 section-dimension-65 cpad-0" data-uib="layout/card" data-ver="0">
+                <button class="btn widget uib_w_69 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn_alterar_senha" type="submit">Alterar</button>
+              </div>
+              <div class="widget widget-container content-area vertical-col uib-card cpad-0 uib_w_66 section-dimension-66" data-uib="layout/card" data-ver="0">
+                <button class="btn widget uib_w_70 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn_alterar_voltar">Voltar</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
     <div class="upage hidden" id="time_jogadores">
       <div class="upage-outer">
@@ -421,150 +615,14 @@
             <div class="col uib_col_4 col-0" data-uib="layout/col" data-ver="0">
               <div class="widget-container content-area vertical-col">
 
-                <div class="tarea widget uib_w_105 d-margins" data-uib="media/text" data-ver="0" name="uib_w_105" id="1">
+                <div class="tarea widget uib_w_105 d-margins" data-uib="media/text" data-ver="0" name="uib_w_105" id="time_jogadores">
                   <div class="widget-container left-receptacle"></div>
                   <div class="widget-container right-receptacle"></div>
+
                   <div class="text-container">
-                    <label class="narrow-control label-top-left" for="time_jogadores_1">Jogador 1</label>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <label class="narrow-control label-top-left" id="time_jogadores_0"></label>
                   </div>
                 </div>
-
-                <div class="tarea widget uib_w_105 d-margins" data-uib="media/text" data-ver="0" name="uib_w_105" id="time_jogadores_2">
-                  <div class="widget-container left-receptacle"></div>
-                  <div class="widget-container right-receptacle"></div>
-                  <div class="text-container">
-                    <label class="narrow-control label-top-left" for="time_jogadores_2">Jogador 2</label>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  </div>
-                </div>
-
-                <div class="tarea widget uib_w_105 d-margins" data-uib="media/text" data-ver="0" name="uib_w_105" id="time_jogadores_3">
-                  <div class="widget-container left-receptacle"></div>
-                  <div class="widget-container right-receptacle"></div>
-                  <div class="text-container">
-                    <label class="narrow-control label-top-left" for="time_jogadores_3">Jogador 3</label>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  </div>
-                </div>
-
-                <div class="tarea widget uib_w_105 d-margins" data-uib="media/text" data-ver="0" name="uib_w_105" id="time_jogadores_4">
-                  <div class="widget-container left-receptacle"></div>
-                  <div class="widget-container right-receptacle"></div>
-                  <div class="text-container">
-                    <label class="narrow-control label-top-left" for="time_jogadores_4">Jogador 4</label>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  </div>
-                </div>
-
-                <div class="tarea widget uib_w_105 d-margins" data-uib="media/text" data-ver="0" name="uib_w_105" id="time_jogadores_5">
-                  <div class="widget-container left-receptacle"></div>
-                  <div class="widget-container right-receptacle"></div>
-                  <div class="text-container">
-                    <label class="narrow-control label-top-left" for="time_jogadores_5">Jogador 5</label>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  </div>
-                </div>
-
-                <div class="tarea widget uib_w_105 d-margins" data-uib="media/text" data-ver="0" name="uib_w_105" id="time_jogadores_6">
-                  <div class="widget-container left-receptacle"></div>
-                  <div class="widget-container right-receptacle"></div>
-                  <div class="text-container">
-                    <label class="narrow-control label-top-left" for="time_jogadores_6">Jogador 6</label>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  </div>
-                </div>
-
-                <div class="tarea widget uib_w_105 d-margins" data-uib="media/text" data-ver="0" name="uib_w_105" id="time_jogadores_7">
-                  <div class="widget-container left-receptacle"></div>
-                  <div class="widget-container right-receptacle"></div>
-                  <div class="text-container">
-                    <label class="narrow-control label-top-left" for="time_jogadores_7">Jogador 7</label>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  </div>
-                </div>
-
-                <div class="tarea widget uib_w_105 d-margins" data-uib="media/text" data-ver="0" name="uib_w_105" id="time_jogadores_8">
-                  <div class="widget-container left-receptacle"></div>
-                  <div class="widget-container right-receptacle"></div>
-                  <div class="text-container">
-                    <label class="narrow-control label-top-left" for="time_jogadores_8">Jogador 8</label>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  </div>
-                </div>
-
-                <div class="tarea widget uib_w_105 d-margins" data-uib="media/text" data-ver="0" name="uib_w_105" id="time_jogadores_9">
-                  <div class="widget-container left-receptacle"></div>
-                  <div class="widget-container right-receptacle"></div>
-                  <div class="text-container">
-                    <label class="narrow-control label-top-left" for="time_jogadores_9">Jogador 9</label>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  </div>
-                </div>
-
-                <div class="tarea widget uib_w_105 d-margins" data-uib="media/text" data-ver="0" name="uib_w_105" id="time_jogadores_10">
-                  <div class="widget-container left-receptacle"></div>
-                  <div class="widget-container right-receptacle"></div>
-                  <div class="text-container">
-                    <label class="narrow-control label-top-left" for="time_jogadores_10">Jogador 10</label>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  </div>
-                </div>
-
-                <div class="tarea widget uib_w_105 d-margins" data-uib="media/text" data-ver="0" name="uib_w_105" id="time_jogadores_11">
-                  <div class="widget-container left-receptacle"></div>
-                  <div class="widget-container right-receptacle"></div>
-                  <div class="text-container">
-                    <label class="narrow-control label-top-left" for="time_jogadores_11">Jogador 11</label>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  </div>
-                </div>
-
-                <div class="tarea widget uib_w_105 d-margins" data-uib="media/text" data-ver="0" name="uib_w_105" id="time_jogadores_12">
-                  <div class="widget-container left-receptacle"></div>
-                  <div class="widget-container right-receptacle"></div>
-                  <div class="text-container">
-                    <label class="narrow-control label-top-left" for="time_jogadores_12">Jogador 12</label>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  </div>
-                </div>
-
-                <div class="tarea widget uib_w_105 d-margins" data-uib="media/text" data-ver="0" name="uib_w_105" id="time_jogadores_13">
-                  <div class="widget-container left-receptacle"></div>
-                  <div class="widget-container right-receptacle"></div>
-                  <div class="text-container">
-                    <label class="narrow-control label-top-left" for="time_jogadores_13">Jogador 13</label>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  </div>
-                </div>
-
-                <div class="tarea widget uib_w_105 d-margins" data-uib="media/text" data-ver="0" name="uib_w_105" id="time_jogadores_14">
-                  <div class="widget-container left-receptacle"></div>
-                  <div class="widget-container right-receptacle"></div>
-                  <div class="text-container">
-                    <label class="narrow-control label-top-left" for="time_jogadores_14">Jogador 14</label>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  </div>
-                </div>
-
-                <div class="tarea widget uib_w_105 d-margins" data-uib="media/text" data-ver="0" name="uib_w_105" id="time_jogadores_15">
-                  <div class="widget-container left-receptacle"></div>
-                  <div class="widget-container right-receptacle"></div>
-                  <div class="text-container">
-                    <label class="narrow-control label-top-left" for="time_jogadores_15">Jogador 15</label>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  </div>
-                </div>
-
-                <div class="tarea widget uib_w_105 d-margins" data-uib="media/text" data-ver="0" name="uib_w_105" id="time_jogadores_16">
-                  <div class="widget-container left-receptacle"></div>
-                  <div class="widget-container right-receptacle"></div>
-                  <div class="text-container">
-                    <label class="narrow-control label-top-left" for="time_jogadores_16">Jogador 16</label>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  </div>
-                </div>
-
                 <span class="uib_shim"></span>
               </div>
             </div>
@@ -606,6 +664,305 @@
             <button class="btn widget uib_w_120 btn-success" data-uib="twitter%20bootstrap/button" data-ver="1" id="chat_apagar">Apagar</button>
             <button class="btn widget uib_w_121 btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="chat_enviar">Enviar <i class="glyphicon glyphicon-chevron-right button-icon-right" data-position="right"></i>
             </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="upage hidden" id="cadastra_liga">
+      <div class="upage-outer">
+        <div class="uib-header header-bg container-group inner-element uib_w_133" data-uib="layout/header" data-ver="0" id="cadastra_liga_header">
+          <h2></h2>
+          <div class="widget-container wrapping-col single-centered"></div>
+          <div class="widget-container content-area horiz-area wrapping-col left"></div>
+          <div class="widget-container content-area horiz-area wrapping-col right"></div>
+        </div>
+        <div class="upage-content ac0 content-area vertical-col left" id="page_3_27">
+          <div class="table-thing widget uib_w_132 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
+            <label class="narrow-control label-top-left" for="cadastra_liga_campeonato">De um nome para o seu Campeonato</label>
+            <input class="wide-control form-control default" type="text" id="cadastra_liga_campeonato">
+          </div>
+          <div class="grid grid-pad urow uib_row_6 row-height-6" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_6 col-0_6-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <div class="table-thing widget uib_w_134 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
+                  <label class="narrow-control label-top-left" for="cadastra_liga_qtd">Quantidade Times</label>
+                  <input class="wide-control form-control default" type="number" step="2" min="2" max="40" id="cadastra_liga_qtd" value="2">
+                </div>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <div class="col uib_col_7 col-0_6-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col left">
+                <button class="btn widget uib_w_135 custom_01 btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="cadastra_liga_gerar">Gerar</button>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+
+            <span class="uib_shim"></span>
+          </div>
+          <button class="btn widget uib_w_136 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="cadastra_liga_amigos"><i class="glyphicon glyphicon-user button-icon-left" data-position="left"></i>Adicionar Amigos</button>
+          <button class="btn widget uib_w_137 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="cadastra_liga_voltar"><i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left"></i>Voltar</button>
+        </div>
+        <div id="cadastra_liga_page_amigos" class="upage-content vertical-col left hidden">
+          <form action="" id="cadastra_liga_page_form">
+            <input type="checkbox" name="vehicle" value="Bike">I have a bike
+            <br>
+            <input type="checkbox" name="vehicle" value="Car">I have a car
+          </form>
+
+          <div class="grid grid-pad urow uib_row_7 row-height-7" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_9 col-0_6-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <button class="btn widget uib_w_138 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="cadastra_liga_amigo_voltar"><i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left"></i>Voltar</button>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <div class="col uib_col_8 col-0_6-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <button class="btn widget uib_w_139 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="cadastra_liga_amigo_inserir"><i class="glyphicon glyphicon-user button-icon-left" data-position="left"></i>Inserir</button>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <span class="uib_shim"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="upage hidden campo2" id="admin_jogar">
+      <div class="upage-outer">
+        <div class="uib-header container-group inner-element uib_w_140 header_jogar" data-uib="layout/header" data-ver="0" id="header_admin_jogar">
+          <h2></h2>
+          <div class="widget-container wrapping-col single-centered"></div>
+          <div class="widget-container content-area horiz-area wrapping-col left"></div>
+          <div class="widget-container content-area horiz-area wrapping-col right"></div>
+        </div>
+        <div class="upage-content ac0 content-area vertical-col left" id="page_37_78">
+          <div class="grid grid-pad urow uib_row_8 row-height-8" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_10 col-0_6-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <button class="btn widget uib_w_147 admin_jogar_margin btn-success" data-uib="twitter%20bootstrap/button" data-ver="1" id="admin_jogar_ir_proximo_jogo">PRÓXIMO JOGO</button>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <div class="col uib_col_12 col-0_6-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <button class="btn widget uib_w_147 admin_jogar_margin btn-success" data-uib="twitter%20bootstrap/button" data-ver="1" id="admin_jogar_ir_estatisticas">ESTATÍSTICAS</button>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+
+            <span class="uib_shim"></span>
+          </div>
+
+          <div class="grid grid-pad urow uib_row_9 row-height-9" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_13 col-0_6-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <button class="btn widget uib_w_147 d-margins btn-success" data-uib="twitter%20bootstrap/button" data-ver="1" id="admin_jogar_ir_jogo_anterior">ULTIMO JOGO</button>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <div class="col uib_col_11 col-0_6-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <button class="btn widget uib_w_148 d-margins btn-success" data-uib="twitter%20bootstrap/button" data-ver="1" id="admin_jogar_simular">SIMULAR JOGO</button>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <span class="uib_shim"></span>
+          </div>
+          <button class="btn widget uib_w_154 d-margins btn-sm btn-success" data-uib="twitter%20bootstrap/button" data-ver="1" id="admin_jogar_menu_principal">MENU PRINCIPAL</button>
+        </div>
+        <div class="uib-footer uib-footer-fixed footer-bg container-group inner-element uib_w_141" data-uib="layout/footer" data-ver="0" id="footer_jogar">
+          <h2></h2>
+          <div class="widget-container wrapping-col single-centered">
+            <div class="tarea widget uib_w_144" data-uib="media/text" data-ver="0" name="uib_w_144" id="admin_jogar_placar">
+              <div class="widget-container left-receptacle"></div>
+              <div class="widget-container right-receptacle"></div>
+              <div class="text-container">
+                <h4 style="color:white">[TIME]0x0[TIME]</h4>
+              </div>
+            </div>
+          </div>
+          <div class="widget-container content-area horiz-area wrapping-col left">
+            <button class="btn widget uib_w_142 d-margins btn-lg btn-link" data-uib="twitter%20bootstrap/button" data-ver="1" id="admin_jogar_voltar"><i class="glyphicon glyphicon-home" data-position="icon only"></i>
+            </button>
+          </div>
+          <div class="widget-container content-area horiz-area wrapping-col right">
+            <button class="btn widget uib_w_143 d-margins btn-lg btn-link" data-uib="twitter%20bootstrap/button" data-ver="1" id="admin_jogar_ir_agenda"><i class="glyphicon glyphicon-th" data-position="icon only"></i>
+            </button>
+          </div>
+        </div>
+        <div id="admin_jogar_simular_partida" class="upage-content vertical-col left hidden">
+          <div class="grid grid-pad urow uib_row_10 row-height-10" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_14 col-0_6-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <div class="table-thing widget uib_w_149" data-uib="twitter%20bootstrap/text_area" data-ver="1">
+                  <label class="narrow-control label-top-left" style="color:white">CASA</label>
+                  <textarea rows="1" class="wide-control form-control" wrap="soft" id="simula_partida_casa"></textarea>
+                </div>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <div class="col uib_col_15 col-0_6-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <div class="table-thing widget uib_w_150" data-uib="twitter%20bootstrap/text_area" data-ver="1">
+                  <label class="narrow-control label-top-right" style="color:white">VISITANTE</label>
+                  <textarea rows="1" class="wide-control form-control" wrap="soft" id="simula_partida_visitante"></textarea>
+                </div>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+
+            <span class="uib_shim"></span>
+          </div>
+
+          <div class="grid grid-pad urow uib_row_11 row-height-11" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_16 col-0_12-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <div class="table-thing widget uib_w_151" data-uib="twitter%20bootstrap/text_area" data-ver="1">
+                  <label class="narrow-control label-top-left" style="color:white">LOG</label>
+                  <textarea rows="13" class="wide-control form-control" wrap="soft" id="simula_partida_log"></textarea>
+                </div>
+                <div class="grid grid-pad urow uib_row_12 row-height-12" data-uib="layout/row" data-ver="0">
+
+                  <div class="col uib_col_18 col-1" data-uib="layout/col" data-ver="0">
+                    <div class="widget-container content-area vertical-col">
+                      <button class="btn widget uib_w_153 btn-lg btn-default" data-uib="twitter%20bootstrap/button" data-ver="1" id="simula_partida_jogar"><i class="fa fa-life-bouy" data-position="icon only"></i>
+                      </button>
+                      <span class="uib_shim"></span>
+                    </div>
+                  </div>
+
+                  <span class="uib_shim"></span>
+                </div>
+
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <span class="uib_shim"></span>
+          </div>
+        </div>
+        <div id="admin_jogar_agenda" class="upage-content vertical-col left hidden">
+          <div class="list-group widget uib_w_179 d-margins" data-uib="twitter%20bootstrap/list_group" data-ver="1">
+            <a class="list-group-item allow-badge widget uib_w_180" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+              <h4 class="list-group-item-heading">Heading</h4>
+              <p class="list-group-item-text">List item</p>
+            </a>
+            <a class="list-group-item allow-badge widget uib_w_181" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+              <h4 class="list-group-item-heading">Heading</h4>
+              <p class="list-group-item-text">List item</p>
+            </a>
+            <a class="list-group-item allow-badge widget uib_w_182" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+              <h4 class="list-group-item-heading">Heading</h4>
+              <p class="list-group-item-text">List item</p>
+            </a>
+          </div>
+        </div>
+        <div id="admin_jogar_proximo_jogo" class="upage-content vertical-col left hidden">
+          <div class="grid grid-pad urow uib_row_23 row-height-23" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_38 col-0_12-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <div class="table-thing widget uib_w_183 d-margins" data-uib="twitter%20bootstrap/text_area" data-ver="1">
+                  <label class="narrow-control label-top-left">Informações proximo jogo:</label>
+                  <textarea rows="7" class="wide-control form-control" wrap="soft">ADVERSARIO: TESTE DIA DO JOGO: 23/01/2017 ESCALAÇÃO FAVORITA: 4-4-2 INFORMAÇÕES ADICIONAIS</textarea>
+                </div>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <span class="uib_shim"></span>
+          </div>
+
+        </div>
+        <div id="admin_jogar_jogo_anterior" class="upage-content vertical-col left hidden">
+          <div class="grid grid-pad urow uib_row_10 row-height-10" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_14 col-0_6-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <div class="table-thing widget uib_w_149" data-uib="twitter%20bootstrap/text_area" data-ver="1">
+                  <label class="narrow-control label-top-left" style="color:white">CASA</label>
+                  <textarea rows="1" class="wide-control form-control" wrap="soft" id="jogo_anterior_casa"></textarea>
+                </div>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <div class="col uib_col_15 col-0_6-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <div class="table-thing widget uib_w_150" data-uib="twitter%20bootstrap/text_area" data-ver="1">
+                  <label class="narrow-control label-top-right" style="color:white">VISITANTE</label>
+                  <textarea rows="1" class="wide-control form-control" wrap="soft" id="jogo_anterior_visitante"></textarea>
+                </div>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+
+            <span class="uib_shim"></span>
+          </div>
+
+          <div class="grid grid-pad urow uib_row_11 row-height-11" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_16 col-0_12-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <div class="table-thing widget uib_w_151" data-uib="twitter%20bootstrap/text_area" data-ver="1">
+                  <label class="narrow-control label-top-left" style="color:white">LOG</label>
+                  <textarea rows="13" class="wide-control form-control" wrap="soft" id="jogo_anterior_log"></textarea>
+                </div>
+
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <span class="uib_shim"></span>
+          </div>
+
+        </div>
+        <div id="admin_jogar_estatisticas" class="upage-content vertical-col left hidden">
+
+          <div class="grid grid-pad urow uib_row_22 row-height-22" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_37 col-0_12-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <span class="uib_shim"></span>
+                <b>
+                        </b>
+                <table id="estatistica_table" style="color:white">
+                  <tbody>
+                    <tr>
+                      <th>TIME</th>
+                      <th>PT</th>
+                      <th>JG</th>
+                      <th>SG</th>
+                    </tr>
+                    <tr>
+                      <td>TESTE</td>
+                      <td>15</td>
+                      <td>3</td>
+                      <td>8</td>
+                    </tr>
+                    <tr>
+                      <td>TESTE</td>
+                      <td>15</td>
+                      <td>3</td>
+                      <td>8</td>
+                    </tr>
+                    <tr>
+                      <td>TESTE</td>
+                      <td>15</td>
+                      <td>3</td>
+                      <td>8</td>
+                    </tr>
+                    <tr>
+                      <td>TESTE</td>
+                      <td>15</td>
+                      <td>3</td>
+                      <td>8</td>
+                    </tr>
+                    <tr>
+                      <td>TESTE</td>
+                      <td>15</td>
+                      <td>3</td>
+                      <td>8</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <span class="uib_shim"></span>
           </div>
         </div>
       </div>
