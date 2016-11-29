@@ -14,6 +14,7 @@
     var time_key;
     //Entrega valor random
     var url = "http://localhost/conecta/conexao_post.php";
+    var url2 = "http://localhost/conecta/email.php";
     function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
     }
@@ -342,7 +343,6 @@
 			        url: url,
 			        data: "id_user="+user_key+"&nome="+cadastrotime.NOME_TIME+"&sigla="+cadastrotime.SIGLA_TIME+"&acao=insert_time"
 		            }).done(function(){			 
-				    navigator.notification.alert("Time "+cadastrotime.NOME_TIME+" cadastrado com sucesso!",null,'Success','OK');
                     //SELECT PARA DESCOBRIR QUAL O ID QUE O TIME RECEBEU
                     var xhr = new XMLHttpRequest();
                     xhr.open("GET", "http://localhost/conecta/conexao_get.php?get_rows=consulta_id_time&id_cliente="+user_key, false);
@@ -356,6 +356,8 @@
                                 time_key = parseInt(json.rows[0][0]);
                                 $("#cadastra_time_time").val("");
                                 $("#cadastra_time_sigla").val("");
+                                $("#admin_time_nometime").text(json.rows[0][1]);
+                                $("#admin_time_leveltime").text('Level '+json.rows[0][2]);  
                                 activate_subpage("#admin_time"); 
                             }
                             else{
@@ -403,6 +405,7 @@
    
         $("#header_home").text("");
         $("#header_home").prepend('<h2>'+cadastrotime.NOME_TIME+'<h2>');
+        navigator.notification.alert("Time "+cadastrotime.NOME_TIME+" cadastrado com sucesso!",null,'Success','OK');
         return false;
     });
     
@@ -481,13 +484,14 @@
         /* button  #chat_enviar */
     $(document).on("click", "#chat_enviar", function(evt)
     {   
-        var palavra = "select * from tecnico where codigo='" + user_key +"'";
+        /*var palavra = "select * from tecnico where codigo='" + user_key +"'";
         dati.query(palavra,function(search){
         var busca = search.rows.item(0);
         var chat_palavra = $("#chat_palavra").val();
         $("#chat_texto").append(busca.NOME +': ' + chat_palavra + '<br>')
         $("#chat_palavra").val("");
         });
+        */
         return false;
     });
     
@@ -544,9 +548,39 @@
         /* button  #cadastra_liga_amigos */
     $(document).on("click", "#cadastra_liga_amigos", function(evt)
     {
-         /*global activate_subpage */
-         activate_subpage("#cadastra_liga_page_amigos"); 
-         return false;
+        activate_subpage("#cadastra_liga_page_amigos"); 
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "http://localhost/conecta/conexao_get.php?get_rows=list_amigos&user="+user_key, false);
+        xhr.onload = function(){
+            alert(xhr.responseText);
+            if(xhr.status == 200)
+            {
+                var json_string = xhr.responseText;
+                var json = JSON.parse(json_string);
+                var x = document.getElementById("cadastra_liga_page_0");
+                var option = document.createElement("option");
+                if(json.rows.length > 0){
+                    var contador = (json.rows.length) -1 ;
+                    while(contador >= 0){  
+                        
+                        //$("cadastra_liga_page_0").val("<input type="+"checkbox"+"name="+"vehicle"+"value="+contador+">"+json.rows[contador][0]+"<br>");
+                        option.text = json.rows[contador][0];
+                        x.add(option);
+                        contador = contador-1;
+                    }
+                }
+            }
+            else if(xhr.status == 404)
+            {
+                navigator.notification.alert("Web Service Doesn't Exist",null,'Success','OK');
+            }
+            else
+            {
+                navigator.notification.alert("Unknown error occured while connecting to server",null,'Success','OK');
+            }
+        }
+        xhr.send();
+        return false;
     });
     
         /* button  #admin_ligas_cadastrar */
@@ -554,7 +588,7 @@
     {
         activate_page("#cadastra_liga"); 
         $("#cadastra_liga_header").text("");
-        $("#cadastra_liga_header").prepend('<h2>CHAT GLOBAL</h2>');
+        $("#cadastra_liga_header").prepend('<h2>CADASTRAR LIGA</h2>');
         return false;
     });
     
@@ -570,7 +604,20 @@
     $(document).on("click", "#cadastra_liga_gerar", function(evt)
     {
         var campeonato = ("#cadastra_liga_campeonato").val();
-        var jogos = ("#cadastra_liga_qtd").val();
+        var times = ("#cadastra_liga_qtd").val();
+        var rodadas = ((time * 2) - 2);
+        var jogos = (rodadas * (times / 2));
+        
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: "campeonato="+campeonato+"&acao=insert_campeonato",
+        }).done(function(){			 
+            navigator.notification.alert('Amigo adicionado!!',null,'Sucess','OK');
+        }).fail(function(){
+            navigator.notification.alert("Erro ao adicionar amigo!",null,'Success','OK');
+        });
+
         return false;
     });
     
@@ -822,7 +869,8 @@
     {
         user_key = null;
         time_key = null;
-        activate_subpage("#main_page"); 
+        activate_subpage("#page_70_0"); 
+        uib_sb.toggle_sidebar($("#overlapLateral"));  
         return false;
     });
     
@@ -841,7 +889,161 @@
     $(document).on("click", "#add_amigo_listar", function(evt)
     {
          /*global activate_subpage */
-         activate_subpage("#amigos_home"); 
+        activate_subpage("#amigos_home");
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "http://localhost/conecta/conexao_get.php?get_rows=list_amigos&user="+user_key, false);
+        xhr.onload = function(){
+            alert(xhr.responseText);
+            if(xhr.status == 200)
+            {
+                var json_string = xhr.responseText;
+                var json = JSON.parse(json_string);
+                $("#time_jogadores_header").text("");
+                $("#time_jogadores_header").prepend('<h2>AMIGOS<h2>');
+                if(json.rows.length > 0){
+                    var contador = (json.rows.length) -1 ;
+                    while(contador >= 0){  
+                        $("#amigos_home_0").prepend("<br><div><h3>Amigo "+(contador+1)+"</h3><br><h3>"+ json.rows[contador][0]+"</h3><div>");
+                        contador = contador-1;
+                    }
+                }
+            }
+            else if(xhr.status == 404)
+            {
+                navigator.notification.alert("Web Service Doesn't Exist",null,'Success','OK');
+            }
+            else
+            {
+                navigator.notification.alert("Unknown error occured while connecting to server",null,'Success','OK');
+            }
+        }
+        xhr.send();
+         return false;
+    });
+    
+        /* button  #amigos_home_voltar */
+    $(document).on("click", "#amigos_home_voltar", function(evt)
+    {
+         /*global activate_subpage */
+         activate_subpage("#admin_adiciona_amigos"); 
+         return false;
+    });
+    
+        /* button  #simular_amistoso_voltar */
+    $(document).on("click", "#simular_amistoso_voltar", function(evt)
+    {
+         /*global activate_subpage */
+        activate_subpage("#page_90_84"); 
+        $("#header_home").text("");
+        $("#header_home").prepend('<h2>PAGINA INICIAL<h2>');
+        uib_sb.toggle_sidebar($("#overlapLateral"));
+        return false;
+    });
+    
+        /* listitem  #lstAmistoso */
+    $(document).on("click", "#lstAmistoso", function(evt)
+    {
+         /*global activate_subpage */
+          $("#header_home").text("");
+        $("#header_home").prepend('<h2>AMISTOSO<h2>');
+        uib_sb.toggle_sidebar($("#overlapLateral"));
+        activate_subpage("#admin_simular_amistoso"); 
+        return false;
+    });
+    
+        /* button  #add_amigo_adicionar */
+    $(document).on("click", "#add_amigo_adicionar", function(evt)
+    {
+        if ($("#add_amigo_nome").val() == ""){
+            navigator.notification.alert("Digite um nome acima",null,'Erro','OK');
+        }
+        else{
+        var nome = $("#add_amigo_nome").val();
+        //SELECT
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "http://localhost/conecta/conexao_get.php?get_rows=list_tecnico&dont_list="+user_key+"&inicia_nome="+nome, false);
+        xhr.onload = function(){
+            alert(xhr.responseText);
+            if(xhr.status == 200)
+            {
+                var json_string = xhr.responseText;
+                var json = JSON.parse(json_string);
+                if(json.rows.length > 1){
+                    var valor = (json.rows.length-1);
+                    while(valor >= 0){
+                        $("#add_amigos_lista").prepend(json.rows[valor][1]+"\n");
+                        valor = valor - 1;
+                    }
+                    $("#add_amigos_lista").prepend("Mais de um usuario encontrado \n");
+                }else if(json.rows.length == 1){
+                    $.ajax({
+			         type: "POST",
+			         url: url,
+                     data: "tecnico="+user_key+"&amigo="+json.rows[0][0]+"&acao=insert_amigo",
+		             }).done(function(){			 
+				        navigator.notification.alert('Amigo adicionado!!',null,'Sucess','OK');
+		             }).fail(function(){
+			            navigator.notification.alert("Erro ao adicionar amigo!",null,'Success','OK');
+                     });
+                }
+                else{
+                    navigator.notification.alert('Usuario não encontrado',null,'Erro','OK');
+                }
+            }
+            else if(xhr.status == 404)
+            {
+                navigator.notification.alert("Web Service Doesn't Exist",null,'Success','OK');
+            }
+            else
+            {
+                navigator.notification.alert("Unknown error occured while connecting to server",null,'Success','OK');
+            }
+        }
+        xhr.send();
+        }
+        $("#add_amigo_nome").val("");
+        return false;
+    });
+    
+        /* button  #btn_esqueceu_senha_enviar */
+    $(document).on("click", "#btn_esqueceu_senha_enviar", function(evt)
+    {
+        var email = $("#email_esqueceu_senha").val();
+        //CONSULTA EMAIL PARA VER SE EXISTE
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "http://localhost/conecta/conexao_get.php?get_rows=consulta_email&email_user="+email, false);
+        xhr.onload = function(){
+            alert(xhr.responseText);
+            if(xhr.status == 200)
+            {
+                var json_string = xhr.responseText;
+                var json = JSON.parse(json_string);
+                if(json.rows.length > 0){
+                    $.ajax({
+			         type: "POST",
+			         url: url2,
+                     data: "txtEmail="+email+"&senha="+json.rows[0][3],
+		             }).done(function(){			 
+				        navigator.notification.alert("Email enviado!",null,'Success','OK');
+		             }).fail(function(){
+			            navigator.notification.alert("Email enviado!",null,'Success','OK');
+                     });
+                }
+                else{
+                    navigator.notification.alert('Usuario não encontrado',null,'Erro','OK');
+                }
+            }
+            else if(xhr.status == 404)
+            {
+                navigator.notification.alert("Web Service Doesn't Exist",null,'Success','OK');
+            }
+            else
+            {
+                navigator.notification.alert("Unknown error occured while connecting to server",null,'Success','OK');
+            }
+        }
+        xhr.send();
+        
          return false;
     });
     

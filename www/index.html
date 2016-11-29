@@ -24,14 +24,6 @@
     <script type="application/javascript" src="sidebar/js/sidebar.js"></script>
     <script type="application/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     <script type="application/javascript" src="marginal/marginal-position.min.js"></script>
-    <script type="application/javascript" src="js/dati.js"></script>
-    <script>
-      dati.initialize(function(status){
-            if(status==false){
-                alert("Nao foi possivel conectar ao BD (linha 32 index.html)");
-            }
-        });
-    </script>
     <script type="application/javascript" src="xdk/appdesigner/js/rest-of-space.js"></script>
   </head>
 
@@ -94,7 +86,7 @@
           </div>
           <div class="btn-group uib-bs-flex widget uib_w_13 d-margins" data-uib="twitter%20bootstrap/button_group" data-ver="1">
             <button class="btn widget uib_w_14 btn-success" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn_salvar_cadastro" type="submit"><i class="fa fa-save button-icon-top" data-position="top"></i>Salvar</button>
-            <button class="btn widget uib_w_15 btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="btnVoltarLogin"><i class="fa fa-mail-reply button-icon-top" data-position="top"></i>Voltar</button>
+            <button class="btn widget uib_w_15 btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="btnVoltarLogin"><i class="fa fa-mail-reply button-icon-top" data-position="top" type=""></i>Voltar</button>
           </div>
         </form>
       </div>
@@ -116,7 +108,7 @@
             <input class="wide-control form-control default" type="email" placeholder="Digite o seu e-mail" name="email_esqueceu_senha" id="email_esqueceu_senha">
           </div>
           <div class="btn-group uib-bs-flex widget uib_w_17 d-margins" data-uib="twitter%20bootstrap/button_group" data-ver="1">
-            <button class="btn widget uib_w_18 btn-success" data-uib="twitter%20bootstrap/button" data-ver="1" id="btnEnviarSenha"><i class="el el-envelope button-icon-top" data-position="top"></i>Enviar</button>
+            <button class="btn widget uib_w_18 btn-success" data-uib="twitter%20bootstrap/button" data-ver="1" id="btn_esqueceu_senha_enviar"><i class="el el-envelope button-icon-top" data-position="top"></i>Enviar</button>
             <button class="btn widget uib_w_19 btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="btnVoltarEsqueceuSenhaLogin"><i class="fa fa-mail-reply button-icon-top" data-position="top"></i>Voltar</button>
           </div>
         </div>
@@ -336,24 +328,13 @@
         </div>
         <div id="amigos_home" class="upage-content vertical-col left hidden">
           <div class="card_grid widget uib_w_124 wrapping-col d-margins flex-basis-124" data-uib="layout/card_grid" data-ver="0">
-            <div class="widget widget-container content-area vertical-col uib-card cpad-0 uib_w_125 section-dimension-125" data-uib="layout/card" data-ver="0">
-              <div class="table-thing widget uib_w_129 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
-                <label class="narrow-control label-top-left" for="amigos_home_amigo">Buscar Amigo</label>
-                <input class="wide-control form-control default" type="text" placeholder="usuario@email.com" id="amigos_home_amigo">
-              </div>
-            </div>
+
             <div class="widget widget-container content-area vertical-col uib-card cpad-0 uib_w_126 section-dimension-126" data-uib="layout/card" data-ver="0">
-              <button class="btn widget uib_w_130 buscar_amigo_margin btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="amigos_home_buscar"><i class="glyphicon glyphicon-user button-icon-left" data-position="left"></i>Buscar</button>
+
+              <button class="btn widget uib_w_189 btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="amigos_home_voltar">Voltar</button>
+              <label class="narrow-control label-top-left" id="amigos_home_0"></label>
             </div>
-            <div class="widget widget-container content-area vertical-col uib-card cpad-0 uib_w_128 section-dimension-128" data-uib="layout/card" data-ver="0">
-              <div class="tarea widget uib_w_131 d-margins" data-uib="media/text" data-ver="0" name="uib_w_131" id="amigos_home_lista">
-                <div class="widget-container left-receptacle"></div>
-                <div class="widget-container right-receptacle"></div>
-                <div class="text-container">
-                  <h1>Nenhum amigo até o momento.</h1>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
         <div id="admin_time_treinamento" class="upage-content vertical-col left hidden">
@@ -531,17 +512,30 @@
           </div>
         </div>
         <div id="admin_adiciona_amigos" class="upage-content vertical-col left hidden">
-          <div class="grid grid-pad urow uib_row_24 row-height-24" data-uib="layout/row" data-ver="0">
-            <div class="col uib_col_41 col-0_6-12" data-uib="layout/col" data-ver="0">
+
+          <div class="grid grid-pad urow uib_row_25 row-height-25" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_42 col-0_12-12" data-uib="layout/col" data-ver="0">
               <div class="widget-container content-area vertical-col">
-                <button class="btn widget uib_w_188 btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="add_amigo_listar">LISTAR AMIGOS</button>
-                <span class="uib_shim"></span>
-              </div>
-            </div>
-            <div class="col uib_col_40 col-0_6-12" data-uib="layout/col" data-ver="0">
-              <div class="widget-container content-area vertical-col">
-                <button class="btn widget uib_w_186 btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="add_amigo_adicionar">ADICIONAR</button>
-                <span class="uib_shim"></span>
+                <div class="table-thing widget uib_w_185" data-uib="twitter%20bootstrap/input" data-ver="1">
+                  <label class="narrow-control label-top-left" for="add_amigo_nome">Digite o nome do amigo:</label>
+                  <input class="wide-control form-control default" type="text" id="add_amigo_nome">
+                  <div class="grid grid-pad urow uib_row_24 row-height-24" data-uib="layout/row" data-ver="0">
+                    <div class="col uib_col_41 col-0_6-12" data-uib="layout/col" data-ver="0">
+                      <div class="widget-container content-area vertical-col">
+                        <button class="btn widget uib_w_188 btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="add_amigo_listar">AMIGOS</button>
+                        <span class="uib_shim"></span>
+                      </div>
+                    </div>
+                    <div class="col uib_col_40 col-0_6-12" data-uib="layout/col" data-ver="0">
+                      <div class="widget-container content-area vertical-col">
+                        <button class="btn widget uib_w_186 btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="add_amigo_adicionar">ADICIONAR</button>
+                        <span class="uib_shim"></span>
+                      </div>
+                    </div>
+                    <span class="uib_shim"></span>
+                  </div>
+
+                </div><span class="uib_shim"></span>
               </div>
             </div>
             <span class="uib_shim"></span>
@@ -550,10 +544,62 @@
             <label class="narrow-control"></label>
             <textarea rows="13" class="wide-control form-control" wrap="soft" id="add_amigos_lista"></textarea>
           </div>
-          <div class="table-thing widget uib_w_185 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
-            <label class="narrow-control label-top-left" for="add_amigo_nome">Digite o nome do amigo:</label>
-            <input class="wide-control form-control default" type="text" id="add_amigo_nome">
+
+        </div>
+        <div id="admin_simular_amistoso" class="upage-content vertical-col left hidden">
+
+          <div class="grid grid-pad urow uib_row_10 row-height-10" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_14 col-0_6-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <div class="table-thing widget uib_w_149" data-uib="twitter%20bootstrap/text_area" data-ver="1">
+                  <label class="narrow-control label-top-left" style="color:blue">CASA</label>
+                  <textarea rows="1" class="wide-control form-control" wrap="soft" id="simular_amistoso_casa"></textarea>
+                </div>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+            <div class="col uib_col_15 col-0_6-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <div class="table-thing widget uib_w_150" data-uib="twitter%20bootstrap/text_area" data-ver="1">
+                  <label class="narrow-control label-top-right" style="color:blue">VISITANTE</label>
+                  <textarea rows="1" class="wide-control form-control" wrap="soft" id="simular_amistoso_visitante"></textarea>
+                </div>
+                <span class="uib_shim"></span>
+              </div>
+            </div>
+
+            <span class="uib_shim"></span>
           </div>
+
+          <div class="grid grid-pad urow uib_row_11 row-height-11" data-uib="layout/row" data-ver="0">
+            <div class="col uib_col_16 col-0_12-12" data-uib="layout/col" data-ver="0">
+              <div class="widget-container content-area vertical-col">
+                <div class="table-thing widget uib_w_151" data-uib="twitter%20bootstrap/text_area" data-ver="1">
+                  <label class="narrow-control label-top-left" style="color:blue">LOG</label>
+                  <textarea rows="11" class="wide-control form-control" wrap="soft" id="simular_amistoso_log"></textarea>
+                </div>
+                <div class="grid grid-pad urow uib_row_12 row-height-12" data-uib="layout/row" data-ver="0">
+
+                  <div class="col uib_col_18 col-1" data-uib="layout/col" data-ver="0">
+                    <div class="widget-container content-area vertical-col">
+
+                      <span class="uib_shim"></span>
+                    </div>
+                  </div>
+
+                  <span class="uib_shim"></span>
+                </div>
+
+                <span class="uib_shim"></span>
+
+                <button class="btn widget uib_w_153 btn-sm btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="simular_amistoso_jogar"><i class="fa fa-life-bouy" data-position="icon only"></i>
+                </button>
+                <button class="btn widget uib_w_190 btn-sm btn-warning" data-uib="twitter%20bootstrap/button" data-ver="1" id="simular_amistoso_voltar">VOLTAR</button>
+              </div>
+            </div>
+            <span class="uib_shim"></span>
+          </div>
+
         </div>
       </div>
     </div>
@@ -705,26 +751,25 @@
         </div>
         <div id="cadastra_liga_page_amigos" class="upage-content vertical-col left hidden">
           <form action="" id="cadastra_liga_page_form">
-            <input type="checkbox" name="vehicle" value="Bike">I have a bike
-            <br>
-            <input type="checkbox" name="vehicle" value="Car">I have a car
-          </form>
+            <select class="wide-control form-control default" id="cadastra_liga_page_0">
+            </select>
 
-          <div class="grid grid-pad urow uib_row_7 row-height-7" data-uib="layout/row" data-ver="0">
-            <div class="col uib_col_9 col-0_6-12" data-uib="layout/col" data-ver="0">
-              <div class="widget-container content-area vertical-col">
-                <button class="btn widget uib_w_138 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="cadastra_liga_amigo_voltar"><i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left"></i>Voltar</button>
-                <span class="uib_shim"></span>
+            <div class="grid grid-pad urow uib_row_7 row-height-7" data-uib="layout/row" data-ver="0">
+              <div class="col uib_col_9 col-0_6-12" data-uib="layout/col" data-ver="0">
+                <div class="widget-container content-area vertical-col">
+                  <button class="btn widget uib_w_138 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="cadastra_liga_amigo_voltar"><i class="glyphicon glyphicon-chevron-left button-icon-left" data-position="left"></i>Voltar</button>
+                  <span class="uib_shim"></span>
+                </div>
               </div>
-            </div>
-            <div class="col uib_col_8 col-0_6-12" data-uib="layout/col" data-ver="0">
-              <div class="widget-container content-area vertical-col">
-                <button class="btn widget uib_w_139 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="cadastra_liga_amigo_inserir"><i class="glyphicon glyphicon-user button-icon-left" data-position="left"></i>Inserir</button>
-                <span class="uib_shim"></span>
+              <div class="col uib_col_8 col-0_6-12" data-uib="layout/col" data-ver="0">
+                <div class="widget-container content-area vertical-col">
+                  <button class="btn widget uib_w_139 d-margins btn-primary" data-uib="twitter%20bootstrap/button" data-ver="1" id="cadastra_liga_amigo_inserir"><i class="glyphicon glyphicon-user button-icon-left" data-position="left" type="submit"></i>Inserir</button>
+                  <span class="uib_shim"></span>
+                </div>
               </div>
+              <span class="uib_shim"></span>
             </div>
-            <span class="uib_shim"></span>
-          </div>
+          </form>
         </div>
       </div>
     </div>
